@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator pól - Prostokąt i Trójkąt (wzór Herona)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+			background-image: url('https://strefaprojektanta.kronosfera.pl/storage/image/core_files/2021/9/29/31b12e433278488f786d0a5685675da3/jpg/kronosfera/category-top-image/aranz_R102_R106_R095_B_www.jpg');
+			
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+			background-color:white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label, input {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Kalkulator pól</h1>
+
+    <h2>Pole prostokąta</h2>
+	<img src="1.png">
+    <label for="rect-length">Długość (a):</label>
+    <input type="number" id="rect-length" placeholder="Podaj długość">
+
+    <label for="rect-width">Szerokość (b):</label>
+    <input type="number" id="rect-width" placeholder="Podaj szerokość">
+
+    <button onclick="calculateRectangle()">Oblicz pole prostokąta</button>
+
+    <h2>Pole trójkąta </h2>
+	<img src="2.png">
+    <label for="triangle-a">Bok a:</label>
+    <input type="number" id="triangle-a" placeholder="Podaj bok a">
+
+    <label for="triangle-b">Bok b:</label>
+    <input type="number" id="triangle-b" placeholder="Podaj bok b">
+
+    <label for="triangle-c">Bok c:</label>
+    <input type="number" id="triangle-c" placeholder="Podaj bok c">
+
+    <button onclick="calculateTriangle()">Oblicz pole trójkąta </button>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    // Funkcja do obliczania pola prostokąta
+    function calculateRectangle() {
+        const length = parseFloat(document.getElementById('rect-length').value);
+        const width = parseFloat(document.getElementById('rect-width').value);
+        if (isNaN(length) || isNaN(width)) {
+            alert('Podaj poprawne wartości dla długości i szerokości.');
+            return;
+        }
+        const area = length * width;
+        document.getElementById('result').innerHTML = `Pole prostokąta wynosi: ${area}`;
+    }
+
+    // Funkcja do obliczania pola trójkąta wzorem Herona
+    function calculateTriangle() {
+        const a = parseFloat(document.getElementById('triangle-a').value);
+        const b = parseFloat(document.getElementById('triangle-b').value);
+        const c = parseFloat(document.getElementById('triangle-c').value);
+
+        if (isNaN(a) || isNaN(b) || isNaN(c)) {
+            alert('Podaj poprawne wartości dla boków a, b, c.');
+            return;
+        }
+
+        // Sprawdzenie czy podane boki mogą utworzyć trójkąt
+        if (a + b <= c || a + c <= b || b + c <= a) {
+            alert('Podane długości boków nie tworzą prawidłowego trójkąta.');
+            return;
+        }
+
+        // Obliczanie półobwodu s
+        const s = (a + b + c) / 2;
+
+        // Obliczanie pola wzorem Herona
+        const area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+
+        document.getElementById('result').innerHTML = `Pole trójkąta (wzór Herona) wynosi: ${area.toFixed(2)}`;
+    }
+</script>
+
+</body>
+</html>
