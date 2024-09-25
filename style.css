@@ -1,237 +1,257 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
 
+/* Resetowanie marginesów i wypełnień dla wszystkich elementów */
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 }
+
+/* Definiowanie zmiennych kolorów */
 :root {
-	--primary-color: #ff7613;
-	--text-color: #727171;
-}
-html {
-	font-size: 10px;
-}
-body {
-	font-family: Inter, sans-serif;
-	background-color: black;
-	color: white;
+	--primary-color: #ff7613; /* Główny kolor (pomarańczowy) */
+	--text-color: #727171;    /* Kolor tekstu */
 }
 
-/* common styles */
+/* Zmiana rozmiaru fontu dla całego dokumentu */
+html {
+	font-size: 10px; /* 1rem = 10px, co ułatwia skalowanie */
+}
+
+/* Ustawienia dla ciała dokumentu */
+body {
+	font-family: Inter, sans-serif; /* Czcionka Inter */
+	background-color: black;        /* Tło czarne */
+	color: white;                   /* Tekst biały */
+}
+
+/* Style wspólne dla różnych elementów */
 img {
-	width: 100%;
+	width: 100%; /* Obrazy wypełniają pełną szerokość kontenera */
 }
 a {
-	text-decoration: none;
-	color: white;
+	text-decoration: none; /* Usunięcie podkreślenia z linków */
+	color: white;          /* Linki w kolorze białym */
 }
 .description {
 	margin-top: 1rem;
-	font-size: 1.5rem;
-	font-weight: 400;
-	color: var(--text-color);
+	font-size: 1.5rem;    /* Rozmiar tekstu */
+	font-weight: 400;     /* Waga czcionki */
+	color: var(--text-color); /* Kolor tekstu */
 }
 .title {
-	color: var(--primary-color);
-	font-weight: 700;
-	font-size: 2rem;
-	text-transform: uppercase;
+	color: var(--primary-color); /* Tytuł w kolorze głównym */
+	font-weight: 700;            /* Gruba czcionka */
+	font-size: 2rem;             /* Rozmiar czcionki */
+	text-transform: uppercase;   /* Tekst wielkimi literami */
 }
 .item_preTitle {
 	font-size: 1.4rem;
-	color: var(--text-color);
-	font-weight: 300;
+	color: var(--text-color); /* Kolor tekstu */
+	font-weight: 300;         /* Cienka czcionka */
 }
 .item_title {
 	font-size: 1.6rem;
-	color: white;
-	font-weight: 500;
-	margin: 0.8rem 0;
+	color: white;             /* Tekst biały */
+	font-weight: 500;         /* Średnia waga czcionki */
+	margin: 0.8rem 0;         /* Margines górny i dolny */
 }
 .item_subtitle {
 	font-size: 1.4rem;
-	color: var(--text-color);
-	font-weight: 400;
+	color: var(--text-color); /* Kolor tekstu */
+	font-weight: 400;         /* Normalna waga czcionki */
 }
 
-/* layouts */
+/* Ustawienia układu kontenera */
 .container {
-	max-width: 1000px;
-	width: 90%;
-	margin: 0 auto;
-	display: grid;
-	padding: 5rem;
-	background: #070707;
-	grid-template-columns: 1fr 1fr;
-	gap: 4rem;
+	max-width: 1000px;    /* Maksymalna szerokość kontenera */
+	width: 90%;           /* Szerokość kontenera wynosi 90% ekranu */
+	margin: 0 auto;       /* Wycentrowanie kontenera */
+	display: grid;        /* Układ siatki */
+	padding: 5rem;        /* Wewnętrzne odstępy */
+	background: #070707;  /* Czarne tło */
+	grid-template-columns: 1fr 1fr; /* Dwie kolumny o równej szerokości */
+	gap: 4rem;            /* Odstęp między elementami siatki */
 }
+
+/* Układ kontenera dla małych ekranów */
 @media only screen and (max-width: 768px) {
 	.container {
 		width: 100%;
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr; /* Jedna kolumna na małych ekranach */
 		padding: 3rem;
-		gap: 7rem;
+		gap: 7rem;                 /* Większy odstęp między elementami */
 	}
 }
+
+/* Stylizacja sekcji profilu */
 .profile {
-	grid-column: 1 / -1;
-	margin-bottom: 2rem;
+	grid-column: 1 / -1;      /* Profil zajmuje całą szerokość kontenera */
+	margin-bottom: 2rem;      /* Margines dolny */
 }
 .group-1,
 .group-2 {
-	display: flex;
-	flex-direction: column;
-	gap: 5rem;
+	display: flex;            /* Flexbox dla układu */
+	flex-direction: column;    /* Elementy w kolumnie */
+	gap: 5rem;                /* Odstęp między elementami */
 }
 .group-3 {
 	max-width: 700px;
 	width: 100%;
 	margin: 0 auto;
-	grid-column: 1/-1;
+	grid-column: 1/-1;         /* Element zajmuje całą szerokość */
 	display: flex;
-	flex-direction: row;
-	gap: 5rem;
+	flex-direction: row;       /* Układ poziomy */
+	gap: 5rem;                /* Odstęp między elementami */
 }
 .group-3 > div {
-	flex: 1;
+	flex: 1;                  /* Elementy zajmują równą szerokość */
 }
+
+/* Układ profilu dla małych ekranów */
 @media only screen and (max-width: 768px) {
 	.profile {
 		margin-bottom: 0;
 	}
 	.group-3 {
-		flex-direction: column;
+		flex-direction: column;  /* Układ pionowy dla małych ekranów */
 	}
 }
 
-/* profile */
+/* Stylizacja elementów profilu */
 .profile_container {
-	display: flex;
-	gap: 2rem;
+	display: flex;           /* Układ flex */
+	gap: 2rem;               /* Odstęp między elementami */
 }
 .profile_profileImg {
-	max-width: 250px;
+	max-width: 250px;        /* Maksymalna szerokość obrazu profilu */
 }
 .profile_name_firstName {
-	color: white;
-	font-weight: 200;
-	font-size: clamp(2rem, 8vw, 4rem);
-	text-transform: uppercase;
+	color: white;            /* Kolor tekstu */
+	font-weight: 200;        /* Cienka czcionka */
+	font-size: clamp(2rem, 8vw, 4rem); /* Dynamiczny rozmiar czcionki */
+	text-transform: uppercase;         /* Tekst wielkimi literami */
 	display: block;
-	margin-bottom: -0.8rem;
+	margin-bottom: -0.8rem;  /* Ujemny margines dla wizualnego efektu */
 }
 .profile_name_lastName {
-	color: var(--primary-color);
-	font-weight: 700;
-	font-size: clamp(2.5rem, 15vw, 7rem);
-	text-transform: uppercase;
+	color: var(--primary-color); /* Kolor główny */
+	font-weight: 700;            /* Gruba czcionka */
+	font-size: clamp(2.5rem, 15vw, 7rem); /* Dynamiczny rozmiar czcionki */
+	text-transform: uppercase;             /* Wielkie litery */
 	display: block;
 }
 .profile_title {
 	font-size: 1.5rem;
-	font-weight: 400;
-	text-transform: uppercase;
+	font-weight: 400;            /* Normalna waga czcionki */
+	text-transform: uppercase;   /* Wielkie litery */
 }
 .downloadBtn {
 	display: block;
-	text-decoration: underline;
+	text-decoration: underline; /* Podkreślenie tekstu */
 	font-size: 1.6rem;
-	margin-top: 1rem;
+	margin-top: 1rem;           /* Margines górny */
 }
 .downloadBtn:hover {
-	color: var(--primary-color);
+	color: var(--primary-color); /* Zmiana koloru po najechaniu */
 }
+
+/* Układ dla małych ekranów */
 @media only screen and (max-width: 768px) {
 	.profile_container {
-		flex-direction: column;
+		flex-direction: column; /* Układ pionowy dla małych ekranów */
 	}
 }
 
-/* Expertise */
+/* Stylizacja listy umiejętności */
 .skills_list {
 	margin-top: 1rem;
 	margin-left: 2rem;
-	line-height: 2;
+	line-height: 2; /* Wysokość linii */
 }
 
-/* Ref  */
+/* Stylizacja referencji */
 .ref_item {
 	margin-top: 2rem;
 }
 .ref_name {
 	font-size: 1.6rem;
-	font-weight: 700;
+	font-weight: 700; /* Gruba czcionka */
 }
 
-/* eduction */
+/* Stylizacja edukacji */
 .edu_item {
-	margin-top: 2rem;
+	margin-top: 2rem; /* Margines górny */
 }
 
-/* certification */
+/* Stylizacja certyfikatów */
 .certification_item {
-	margin-top: 2rem;
-}
-/* exp */
-.exp_item {
-	margin-top: 2rem;
+	margin-top: 2rem; /* Margines górny */
 }
 
-/* awards */
-.awards_item {
-	margin-top: 2rem;
+/* Stylizacja doświadczenia */
+.exp_item {
+	margin-top: 2rem; /* Margines górny */
 }
-/* Interests */
+
+/* Stylizacja nagród */
+.awards_item {
+	margin-top: 2rem; /* Margines górny */
+}
+
+/* Stylizacja zainteresowań */
 .interest_items {
-	margin-top: 2rem;
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 2rem;
+	margin-top: 2rem;               /* Margines górny */
+	display: flex;                  /* Układ flex */
+	align-items: center;            /* Wyśrodkowanie w pionie */
+	flex-wrap: wrap;                /* Zawijanie elementów */
+	gap: 2rem;                      /* Odstęp między elementami */
 }
 .interest_item {
 	font-size: 1.5rem;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 0.5rem;
-	color: var(--text-color);
+	flex-direction: column;         /* Układ pionowy */
+	align-items: center;            /* Wyśrodkowanie w pionie */
+	justify-content: center;        /* Wyśrodkowanie w poziomie */
+	gap: 0.5rem;                    /* Odstęp między elementami */
+	color: var(--text-color);       /* Kolor tekstu */
 }
 .interest_item svg {
-	width: 2rem;
+	width: 2rem; /* Rozmiar ikony zainteresowań */
 }
 
-/* socials */
+/* Stylizacja linków do mediów społecznościowych */
 .social_items {
 	margin-top: 2rem;
 }
 .social_item {
 	margin-top: 1.5rem;
 	font-size: 1.5rem;
-	display: flex;
-	gap: 0.5rem;
-	align-items: center;
-	justify-content: flex-start;
-	color: var(--text-color);
+	display: flex;             /* Układ flex */
+	gap: 0.5rem;               /* Odstęp między elementami */
+	align-items: center;       /* Wyśrodkowanie elementów w pionie */
+	justify-content: flex-start; /* Wyrównanie do lewej */
+	color: var(--text-color);  /* Kolor tekstu */
 }
 .social_item:hover {
-	color: var(--primary-color);
+	color: var(--primary-color); /* Zmiana koloru po najechaniu */
 }
 .social_item svg {
-	width: 2rem;
+	width: 2rem; /* Rozmiar ikony mediów społecznościowych */
 }
 
+/* Stylizacja poziomej linii */
 hr {
-	grid-column: 1/-1;
-	width: 80%;
+	grid-column: 1/-1;   /* Zajmuje całą szerokość */
+	width: 80%;          /* Szerokość wynosi 80% */
 	margin: 0 auto;
-	margin-top: 5rem;
-	margin-bottom: 1rem;
-	border: none;
-	border-top: 2px solid rgba(128, 128, 128, 0.229);
+	margin-top: 5rem;    /* Margines górny */
+	margin-bottom: 1rem; /* Margines dolny */
+	border: none;        /* Usunięcie domyślnej obramówki */
+	border-top: 2px solid rgba(128, 128, 128, 0.229); /* Delikatna linia */
 }
+
+/* Stylizacja dla małych ekranów */
 @media only screen and (max-width: 768px) {
 	hr {
 		margin: 0 auto;
