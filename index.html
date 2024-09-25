@@ -1,132 +1,181 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator pól - Prostokąt i Trójkąt (wzór Herona)</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-			background-image: url('https://strefaprojektanta.kronosfera.pl/storage/image/core_files/2021/9/29/31b12e433278488f786d0a5685675da3/jpg/kronosfera/category-top-image/aranz_R102_R106_R095_B_www.jpg');
-			
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-			background-color:white;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        label, input {
-            display: block;
-            margin: 10px 0;
-        }
-
-        input[type="number"] {
-            width: 100%;
-            padding: 8px;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .result {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <div class="container">
+    <div class="profile">
+      <div class="profile_container">
+        <div class="profile_profileImg">
+          <img src="./images/1.jpg" alt="moje zjdecie okok">
+        </div>
+        <div>
+          <h1 class="profile_name">
+            <span class="profile_name_firstName">Michał</span>
+            <span class="profile_name_lastName">Kuznik</span>
+          </h1>
+          <p class="profile_title">Programista</p>
+          <p class="description profile_description">
+             Opis mojej osoby.
+          </p>
+          <a class="downloadBtn" href="./cv.pdf" download="Resume.pdf">Download Resume</a>
+        </div>
+      </div>
+    </div>
+    <div class="group-1">
+      <div class="skills">
+        <h3 class="title">Umiejętności</h3>
+        <ul class="skills_list description">
+          <li>JavaScript</li>
+          <li>PHP & Wordpress</li>
+          <li>HTML CSS</li>
+          <li>React JS</li>
+          <li>MERN STACK</li>
+        </ul>
+      </div>
+      <div class="ref">
+        <h3 class="title">Referencje</h3>
+        <div class="ref_item">
+          <h4 class="ref_name">Marcin Osadowski</h4>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, neque?</p>
+        </div>
+        <div class="ref_item">
+          <h4 class="ref_name">Aleksander Jabłoński</h4>
+          <p class="description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+        </div>
+      </div>
 
-<div class="container">
-    <h1>Kalkulator pól</h1>
+      <div class="edu">
+        <h3 class="title">Wykształcenie</h3>
+        <div class="edu_item">
+          <p class="item_preTitle">2012-2014</p>
+          <h4 class="item_title">Uniwersytet Jagielloński</h4>
+          <p class="item_subtitle">
+            Informatyka 
+          </p>
+        </div>
+        <div class="edu_item">
+          <p class="item_preTitle">2008-2012</p>
+          <h4 class="item_title">Politechnika Wrocławska</h4>
+          <p class="item_subtitle">
+            Informatyka Stosowana
+          </p>
+        </div>
+      </div>
 
-    <h2>Pole prostokąta</h2>
-	<img src="1.png">
-    <label for="rect-length">Długość (a):</label>
-    <input type="number" id="rect-length" placeholder="Podaj długość">
+      <div class="certification">
+        <h3 class="title">certyfikaty</h3>
+        <div class="certification_item">
+          <p class="item_preTitle">2018</p>
+          <h4 class="item_title">AWS Certified Solutions Architect – Associate | 2022</h4>
+          <p class="description">
+            Certyfikat potwierdzający umiejętności w zakresie projektowania i wdrażania aplikacji opartych na chmurze AWS.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="group-2">
+      <div class="exp">
+        <h3 class="title">Doświadczenie</h3>
+        <div class="exp_item">
+          <p class="item_preTitle">2019 - present</p>
+          <h4 class="item_title"> Software Solutions Sp. z o.o.</h4>
+          <p class="item_subtitle">Senior Backend Developer <p>
+          <p class=" description">
+            Projektowanie i implementacja aplikacji backendowych w Node.js oraz Pythonie.
+			Wdrożenie systemów monitorowania aplikacji w chmurze (AWS, Docker).
+			Tworzenie API RESTful dla aplikacji mobilnych i webowych.
+			Współpraca z zespołami frontendowymi w celu dostarczenia skalowalnych rozwiązań.
+          </p>
+        </div>
+        <div class="exp_item">
+          <p class="item_preTitle">lipiec 2018 – kwiecień 2020</p>
+          <h4 class="item_title">Tech Innovators</h4>
+          <p class="item_subtitle">Full-Stack Developer</p>
+          <p class="description">
+           Tworzenie pełnych stosów aplikacji (React, Node.js, MongoDB).
+			Wsparcie w migracji starszych aplikacji do nowszych technologii (z PHP na Node.js).
+			Praca w środowisku Agile z wykorzystaniem metodologii Scrum.
+			Wdrażanie testów jednostkowych oraz integracyjnych z wykorzystaniem Jesta i Mocha.
+          </p>
+        </div>
+      </div>
+      <div class="awards">
+        <h3 class="title">Nagrody</h3>
+        <div class="awards_item">
+          <p class="item_preTitle">2019</p>
+          <h4 class="item_title">Pokojowa Nagroda Nobla</h4>
+          <p class=" description">
+           Otrzymałem Pokojową Nagrodę Nobla za moje działania na rzecz promowania pokoju i dialogu między zwaśnionymi stronami. Przez lata angażowałem się w mediacje, które doprowadziły do zakończenia konfliktów zbrojnych, zapobiegając dalszemu rozlewowi krwi i ratując wiele istnień ludzkich. Moja praca skupiła się także na obronie praw człowieka, walce z dyskryminacją oraz wspieraniu uciśnionych grup. Dążenie do sprawiedliwości, równości i harmonii międzynarodowej było zawsze moim priorytetem, a ten wysiłek został doceniony przez społeczność międzynarodową.
+          </p>
+        
 
-    <label for="rect-width">Szerokość (b):</label>
-    <input type="number" id="rect-width" placeholder="Podaj szerokość">
+      <div class="intrest">
+        <h3 class="title">Zainteresowania</h3>
+        <div class="interest_items">
+          <div class="interest_item">
+            <i data-feather="music"></i>
+            <span>Muzyka</span>
+          </div>
+          <div class="interest_item">
+            <i data-feather="book"></i>
+            <span>Książi</span>
+          </div>
+          <div class="interest_item">
+            <i data-feather="map"></i>
+            <span>Podróżowanie</span>
+          </div>
+        </div>
 
-    <button onclick="calculateRectangle()">Oblicz pole prostokąta</button>
-
-    <h2>Pole trójkąta </h2>
-	<img src="2.png">
-    <label for="triangle-a">Bok a:</label>
-    <input type="number" id="triangle-a" placeholder="Podaj bok a">
-
-    <label for="triangle-b">Bok b:</label>
-    <input type="number" id="triangle-b" placeholder="Podaj bok b">
-
-    <label for="triangle-c">Bok c:</label>
-    <input type="number" id="triangle-c" placeholder="Podaj bok c">
-
-    <button onclick="calculateTriangle()">Oblicz pole trójkąta </button>
-
-    <div class="result" id="result"></div>
-	<p> Michał Kuznik 3f </p>
-</div>
-
-<script>
-    // Funkcja do obliczania pola prostokąta
-    function calculateRectangle() {
-        const length = parseFloat(document.getElementById('rect-length').value);
-        const width = parseFloat(document.getElementById('rect-width').value);
-        if (isNaN(length) || isNaN(width)) {
-            alert('Podaj poprawne wartości dla długości i szerokości.');
-            return;
-        }
-        const area = length * width;
-        document.getElementById('result').innerHTML = `Pole prostokąta wynosi: ${area}`;
-    }
-
-    // Funkcja do obliczania pola trójkąta wzorem Herona
-    function calculateTriangle() {
-        const a = parseFloat(document.getElementById('triangle-a').value);
-        const b = parseFloat(document.getElementById('triangle-b').value);
-        const c = parseFloat(document.getElementById('triangle-c').value);
-
-        if (isNaN(a) || isNaN(b) || isNaN(c)) {
-            alert('Podaj poprawne wartości dla boków a, b, c.');
-            return;
-        }
-
-        // Sprawdzenie czy podane boki mogą utworzyć trójkąt
-        if (a + b <= c || a + c <= b || b + c <= a) {
-            alert('Podane długości boków nie tworzą prawidłowego trójkąta.');
-            return;
-        }
-
-        // Obliczanie półobwodu s
-        const s = (a + b + c) / 2;
-
-        // Obliczanie pola wzorem Herona
-        const area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
-
-        document.getElementById('result').innerHTML = `Pole trójkąta (wzór Herona) wynosi: ${area.toFixed(2)}`;
-	
-    }
-</script>
-
+      </div>
+    </div>
+    <hr>
+    <div class="group-3">
+      <div class="contact">
+        <h3 class="title">Kontakt</h3>
+        <div class="contact_info">
+          <p class="description">
+            Racibórz, Polska
+          </p>
+          <p class="description">
+            +48 713377657
+          </p>
+          <p class="description">
+            michal.k02923@gmail.com
+          </p>
+        </div>
+      </div>
+      <div class="social">
+        <h3 class="title">Socials</h3>
+        <div class="social_items">
+          <a href="#" target="_b" class="social_item">
+            <i data-feather="github"></i>
+            <span>/mojgithub</span>
+          </a>
+          <a href="#" target="_blank" class="social_item">
+            <i data-feather="twitter"></i>
+            <span>/moj twiiter</span>
+          </a>
+          <a href="#" target="_blank" class="social_item">
+            <i data-feather="linkedin"></i>
+            <span>/mojlikedin</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    feather.replace()
+  </script>
 </body>
+
 </html>
