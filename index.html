@@ -14,6 +14,9 @@ print(code_str("message", step=2))
 
 
 def code_txt(*args):
+    """ 
+    Funkcja code_txt akceptuje dowolną liczbę ciągów znaków  przekazanych jako argumenty (*args) i koduje je przy użyciu funkcji code_str.
+    """
     code_list = []
     for arg in args:
         kodd  = code_str(arg, special_char="$", step=2)
