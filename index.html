@@ -1,0 +1,23 @@
+def code_str(text_in="", special_char="*" step=1):
+    wynik = []
+    for i in range(len(text_in)):
+        if i % step == 0:
+            wynik.append(special_char)
+        else:
+            wynik.append(text_in[i])
+    return "".join(wynik)
+
+print(code_str("Top", step=2))     
+print(code_str("secret", step= 2)) 
+print(code_str("message", step=2))  
+
+
+
+def code_txt(*args):
+    code_list = []
+    for arg in args:
+        kodd  = code_str(arg, special_char="$", step=2)
+        code_list.append(kodd)
+    return ",".join(code_list)
+
+print(code_txt("Top", "secret", "message", "for you"))  
